@@ -11,12 +11,13 @@
           <br />Temukan tempat yang cocok dengan seleramu.
         </v-card-text>
       </v-img>
+
       <!-- searc tombol -->
 
       <v-toolbar class="btn-toolbar" dense floating>
         <v-text-field placeholder="jelajahi disini.."></v-text-field>
         <v-btn color="#F15F31" id="searching" href="/recomendation">
-          <p color="white" class="search">cari</p>
+          <p id="search">cari</p>
           <v-icon color="white">mdi-magnify</v-icon>
         </v-btn>
       </v-toolbar>
@@ -27,12 +28,15 @@
     <v-container class="sub-container">
       <v-row class="mb-6" no-gutters>
         <v-col md="6" justify-center>
+          <h2>REENPRESENT</h2>
+          <br />
+          <br />
           <p>
             REENPRESENTS memberikan informasi
-            tentang
-            <br />tempat makanan mie ayam
-            yang ada di Yogyakarta
-            <br />dan ciri khasnya
+            tentang tempat
+            <br />makanan mie ayam
+            yang ada di Yogyakarta,alamat tempat
+            <br />makan,harga, dan ciri khasnya
           </p>
         </v-col>
 
@@ -42,6 +46,8 @@
           </v-card>
         </v-col>
       </v-row>
+    </v-container>
+    <v-container>
       <v-row class="hero">
         <v-col v-for="(barang,index) in barangs" :key="index" md="4">
           <v-row>
@@ -49,9 +55,10 @@
               <v-card-title>
                 <img :src="barang.gambar" />
                 <v-card-actions>
-                  <v-list-item>{{barang.nama}}</v-list-item>
+                  {{barang.nama}}
+                  <v-list-item>{{barang.harga}}</v-list-item>
                 </v-card-actions>
-                <v-card-text>{{barang.harga}}</v-card-text>
+                <!-- <v-card-text>{{barang.harga}}</v-card-text> -->
                 <v-spacer></v-spacer>
                 <v-card>
                   {{barang.jalan}}
@@ -139,12 +146,11 @@ export default {
 }
 .btn-toolbar {
   margin-left: 20px;
-  margin-top: -150px;
+  margin-top: -30px;
+  width: 500px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0) !important;
 }
-.search {
-  margin-top: 13px;
-  color: #f15f31;
-}
+
 .sub-container {
   margin-top: 300px;
   margin-left: 100px;
@@ -163,10 +169,21 @@ p {
 }
 #search {
   color: white !important;
+  margin: 13px 5px;
+  width: 50px;
 }
+#searching {
+  margin-left: 300px;
+  width: 100px;
+}
+
 .hero {
-  margin-top: -100px;
+  margin-top: -400px;
   margin-right: 10px;
   padding: 10px;
+}
+h2 {
+  margin-left: 160px;
+  margin-top: -70px;
 }
 </style>
